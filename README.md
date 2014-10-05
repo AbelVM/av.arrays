@@ -7,7 +7,7 @@ av.arrays
 <li><b>unique()</b> new array with unique elements</li>
 <li><b>OR(other_array)</b> new array with the elements of the union</li>
 <li><b>AND(other_array)</b> new array with the elements of the intersection</li>
-<li><b>XOR(other_array)</b> array with the elements of the union without the elements of the intersection</li>
+<li><b>XOR(other_array)</b> new array with the elements of the union without the elements of the intersection</li>
 <li><b>min()</b> returns the min value</li>
 <li><b>max()</b> returns the max value</li>
 <li><b>range()</b> returns [min, max]</li>
