@@ -1,6 +1,6 @@
 av.arrays
 =========
-<p>Small&Fast Javascript library that attaches xtra methods for arrays, including basic Descriptive Statistics functions </p>
+<p>Small&Fast JavaScript library that attaches xtra methods for arrays, including basic Descriptive Statistics functions </p>
 <ul>
 <li><b>solid()</b> new array without undefined and null values</li>
 <li><b>isNaN()</b> boolean, check whether the whole array isNaN</li>
