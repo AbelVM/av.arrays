@@ -3,16 +3,20 @@
 *Xtra-methods for javascript arrays,
 *including basic Descriptive Statistics functions	
 *@author	Abel Vázquez <abel.vm@gmail.com>
-*@version	1.0.0
-*@since		2014-10-05
+*@version	1.0.2
+*@since		2014-10-08
 */
 
 (function(){
 	'use strict';
 	var _array = Array.prototype;
 	//solid
+	_array.isSolid = function(){
+		return this.every(function(a){return a!==undefined&&a!=='undefined'&&a!==void(0)&&a!==null});
+	};
+	//solid
 	_array.solid = function(){
-		return this.filter(function(item){return item!==undefined&&item!=='undefined'&&item!==void(0)&&item!==null});
+		return this.filter(function(a){return a!==undefined&&a!=='undefined'&&a!==void(0)&&a!==null});
 	};
 	// isNaN
 	_array.isNaN = function(){

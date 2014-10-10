@@ -1,9 +1,10 @@
 av.arrays
 =========
-<p>Small&Fast JavaScript library that attaches xtra methods for arrays, including basic Descriptive Statistics functions </p>
+<p>Small&Fast JavaScript library that attaches xtra methods for Arrays, including basic Descriptive Statistics functions </p>
 <ul>
+<li><b>issolid()</b> boolean, check whether array is not sparse</li>
 <li><b>solid()</b> new array without undefined and null values</li>
-<li><b>isNaN()</b> boolean, check whether the whole array isNaN</li>
+<li><b>isNaN()</b> boolean, check whether the at least one element of the array isNaN</li>
 <li><b>unique()</b> new array with unique elements</li>
 <li><b>OR(other_array)</b> new array with the elements of the union</li>
 <li><b>AND(other_array)</b> new array with the elements of the intersection</li>
