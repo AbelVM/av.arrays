@@ -25,7 +25,7 @@ av.arrays
 <li><b>pvariance()</b> number, population variance</li>
 <li><b>covariance(other_array)</b> number</li>
 <li><b>stdDev()</b> number, standard deviation</li>
-<li><b>stdDev()</b> number, population standard deviation</li>
+<li><b>pstdDev()</b> number, population standard deviation</li>
 <li><b>correlation(other_array)</b> number</li>
 <li><b>CV()</b> number, coefficient of variation</li>
 <li><b>skew()</b> number</li>

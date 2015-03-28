@@ -103,13 +103,13 @@
 	_array.pvariance = function (){
 		var	tmpa = this.solid(),
 			tmpb = this.mean(1);
-		return (tmpa.length ==0)? null : tmpa.reduce(function(a,b){return a+Math.pow(b-tmpb,2)},0) / tmpa.length;
+		return (tmpa.length <2)? null : tmpa.reduce(function(a,b){return a+Math.pow(b-tmpb,2)},0) / tmpa.length;
 	};
 	// variance
 	_array.variance = function (){
 		var	tmpa = this.solid(),
 			tmpb = this.mean(1);
-		if (tmpa.length ==0) return null;
+		if (tmpa.length <2) return null;
 		return tmpa.reduce(function(a,b){return a+Math.pow(b-tmpb,2)},0) / (tmpa.length-1);
 	};
 	// covariance
@@ -130,7 +130,8 @@
 	};
 	// correlation
 	_array.correlation = function(arrB) {
-		return (this.variance()==0 || arrB.variance ==0)?null:this.covariance(arrB) / (this.variance()*arrB.variance());
+		var tmp= this.variance();
+		return (tmp==null || tmp==0 || arrB.variance ==0)?null:this.covariance(arrB) / (tmp*arrB.variance());
 	};
 	// coefficient of variation
 	_array.CV = function() {
