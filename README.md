@@ -13,6 +13,7 @@ av.arrays
 <li><b>max()</b> returns the max value</li>
 <li><b>range()</b> returns [min, max]</li>
 <li><b>sum()</b> returns the sum of the items of the array</li>
+<li><b>stack()</b> returns a new array with the stacked values of each item</li>
 <li><b>module()</b> number, returns the module</li>
 <li><b>normalize()</b> new array, each item divided by module</li>
 <li><b>mean(i)</b> number, mean of the items i=(-1: harmonic, 0: geometric, 1: aritmetic, 2: quadratic,... n: n-mean)</li>
@@ -21,8 +22,10 @@ av.arrays
 <li><b>mode()</b> new array, modes of the array</li>
 <li><b>P(i)</b> number, Percentile_i </li>
 <li><b>variance()</b> number</li>
+<li><b>pvariance()</b> number, population variance</li>
 <li><b>covariance(other_array)</b> number</li>
 <li><b>stdDev()</b> number, standard deviation</li>
+<li><b>stdDev()</b> number, population standard deviation</li>
 <li><b>correlation(other_array)</b> number</li>
 <li><b>CV()</b> number, coefficient of variation</li>
 <li><b>skew()</b> number</li>

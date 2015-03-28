@@ -3,8 +3,8 @@
 *Xtra-methods for javascript arrays,
 *including basic Descriptive Statistics functions	
 *@author	Abel Vázquez <abel.vm@gmail.com>
-*@version	1.0.2
-*@since		2014-10-08
+*@version	1.0.4
+*@since		2015-03-28
 */
 
 (function(){
@@ -56,6 +56,10 @@
 	_array.sum = function() {
 		return this.solid().reduce(function(a,b){return a+b;});
 	};
+	// stack
+	_array.stack = function () {
+		return this.map(function(a,b){return this.reduce(function(c,d,e){return c+((e<=b)?d:0)})}, this);
+	}
 	// module
 	_array.module = function() {
 		return Math.sqrt(this.solid().reduce(function(a,b){return a+b*b;},0));
@@ -95,11 +99,18 @@
 			m = (tmpa.length * i) % 100;
 		return (m==0)?(tmpa[n-1]+tmpa[n])/2:tmpa[n];
 	};
+	// population variance
+	_array.pvariance = function (){
+		var	tmpa = this.solid(),
+			tmpb = this.mean(1);
+		return (tmpa.length ==0)? null : tmpa.reduce(function(a,b){return a+Math.pow(b-tmpb,2)},0) / tmpa.length;
+	};
 	// variance
 	_array.variance = function (){
 		var	tmpa = this.solid(),
 			tmpb = this.mean(1);
-		return (tmpa.length ==0)? null : tmpa.reduce(function(a,b){return a+Math.pow(b-tmpb,2)},0) / tmpa.length;
+		if (tmpa.length ==0) return null;
+		return tmpa.reduce(function(a,b){return a+Math.pow(b-tmpb,2)},0) / (tmpa.length-1);
 	};
 	// covariance
 	_array.covariance = function (arrB){
@@ -107,10 +118,15 @@
 		var tmpa = this.map(function(a,b){return a*arrB[b];});
 		return tmpa.mean(1) - (this.mean(1)*arrB.mean(1));
 	};
+	// population standard deviation
+	_array.pstdDev = function (){
+		var tmpa = this.pvariance();
+		return (tmpa!= null) ? Math.sqrt(tmpa) : null;
+	};
 	// standard deviation
 	_array.stdDev = function (){
-		var tmpa = this.solid().length;
-		return (tmpa==0)? null:(tmpa==1)?0:Math.sqrt((tmpa/(tmpa-1)) * this.variance());
+		var tmpa = this.variance();
+		return (tmpa!= null) ? Math.sqrt(tmpa) : null;
 	};
 	// correlation
 	_array.correlation = function(arrB) {
