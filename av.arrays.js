@@ -73,7 +73,7 @@
 	_array.mean = function(m){
 		var tmpa = this.solid(),
 			tmpb = tmpa.length;
-		return (tmpb == 0)? null:(m==0)? tmpa.reduce(function(a,b){return a*b;})/tmpb : Math.pow(tmpa.reduce(function(a,b){return a+Math.pow(b,m)},0)/tmpb,(1/m));
+		return (tmpb == 0)? null:(m==0)? Math.pow(tmpa.reduce(function(a,b){return a*b;}), 1/tmpb) : Math.pow(tmpa.reduce(function(a,b){return a+Math.pow(b,m)},0)/tmpb,(1/m));
 	};
 	// median
 	_array.median = function(){
